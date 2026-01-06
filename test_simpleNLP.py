@@ -1,5 +1,4 @@
 from NLPLogic.simpleNLP import search_wikipedia, summarize_wikipedia, get_text_blob, get_phrases
-import pytest
 from unittest.mock import patch
 import wikipedia
 
