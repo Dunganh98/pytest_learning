@@ -1,7 +1,5 @@
 import subprocess
 import sys
-import pytest
-from unittest.mock import patch, MagicMock
 from NLPLogic.simpleNLP import get_phrases
 
 
@@ -11,6 +9,7 @@ def test_wikiphrases_cli_with_argument():
         [sys.executable, "wikiphrases.py", "Python (programming language)"],
         capture_output=True,
         text=True,
+        check=True,
         timeout=10
     )
     assert result.returncode == 0
@@ -23,6 +22,7 @@ def test_wikiphrases_cli_help():
         [sys.executable, "wikiphrases.py", "--help"],
         capture_output=True,
         text=True,
+        check=True,
         timeout=10
     )
     assert result.returncode == 0
